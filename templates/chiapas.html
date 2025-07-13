@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiapas - México Tradicional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        .title-font { font-family: 'Playfair Display', serif; }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #d62828;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .gradient-border {
+            background: linear-gradient(45deg, #8B4513, #D2691E, #8B4513);
+            background-size: 200% 200%;
+            animation: gradient 3s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(139, 69, 19, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Navbar -->
+    <nav class="bg-gray-900 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <svg class="w-10 h-10 text-[#d62828]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm4 0h-2v-6h2v6zm.5-9.5c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5.67-1.5 1.5-1.5 1.5.67 1.5 1.5zm-5 0c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5.67-1.5 1.5-1.5 1.5.67 1.5 1.5z"></path>
+                </svg>
+                <span class="ml-3 text-xl font-bold title-font text-white">México Tradicional</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="/" class="nav-link text-gray-300 hover:text-[#d62828] font-medium">Inicio</a>
+                <a href="/#estados" class="nav-link text-gray-300 hover:text-[#d62828] font-medium">Recetas tradicionales</a>
+                <a href="/#tradiciones" class="nav-link text-gray-300 hover:text-[#d62828] font-medium">Mapa de comidas locales</a>
+                <a href="/#galeria" class="nav-link text-gray-300 hover:text-[#d62828] font-medium">Eventos y fetivales</a>
+            </div>
+            <button class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-1/3 flex items-center justify-center overflow-hidden">
+        <!-- Elegant gradient background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-[#1a1a1a] to-[#2d1b1b]">
+            <!-- Subtle pattern overlay -->
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, #8B4513 2px, transparent 2px), radial-gradient(circle at 75% 75%, #D2691E 2px, transparent 2px); background-size: 50px 50px;"></div>
+            </div>
+            <!-- Animated gradient overlay -->
+            <div class="absolute inset-0 bg-gradient-to-r from-[#8B4513]/10 via-transparent to-[#D2691E]/10 animate-pulse"></div>
+        </div>
+        
+        <!-- Decorative elements -->
+        <div class="absolute top-10 left-10 w-32 h-32 border border-[#D2691E]/20 rounded-full"></div>
+        <div class="absolute bottom-10 right-10 w-24 h-24 border border-[#8B4513]/20 rounded-full"></div>
+        <div class="absolute top-1/3 right-1/4 w-16 h-16 bg-gradient-to-br from-[#8B4513]/30 to-[#D2691E]/30 rounded-full blur-sm"></div>
+        
+        <!-- Content -->
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+            <!-- Decorative accent line -->
+            <div class="w-20 h-1 bg-gradient-to-r from-[#8B4513] to-[#D2691E] mx-auto mb-8 rounded-full"></div>
+            
+            <!-- Main title -->
+            <h1 class="text-5xl md:text-7xl font-bold title-font text-white mb-6 drop-shadow-lg">
+                Chiapas
+            </h1>
+            
+            <!-- Subtitle -->
+            <p class="text-2xl md:text-3xl text-[#D2691E] font-semibold mb-8 drop-shadow-md">
+                El Corazón de la Selva Maya
+            </p>
+            
+            <!-- Description in elegant container -->
+            <div class="bg-black/30 backdrop-blur-sm rounded-2xl p-8 border border-[#D2691E]/20 shadow-2xl">
+                <p class="text-lg md:text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed font-medium">
+                    La tierra de las culturas mayas vivas, donde la tradición se encuentra con la modernidad. Un estado lleno de riqueza cultural, gastronomía única y paisajes impresionantes que te transportarán a un mundo de magia y tradición ancestral.
+                </p>
+            </div>
+            
+            <!-- Decorative accent line -->
+            <div class="w-20 h-1 bg-gradient-to-r from-[#8B4513] to-[#D2691E] mx-auto mt-8 rounded-full"></div>
+        </div>
+    </section>
+
+    <!-- Información General -->
+    <section id="informacion" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold title-font text-white mb-6">El Corazón de la Selva Maya</h2>
+                    <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+                        Chiapas es un estado que guarda los secretos más profundos de la cultura maya. Desde las impresionantes ruinas de Palenque hasta las comunidades indígenas que mantienen vivas sus tradiciones milenarias, cada rincón de Chiapas cuenta una historia fascinante.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
+                            <h3 class="text-[#D2691E] font-semibold mb-2">Capital</h3>
+                            <p class="text-gray-300">Tuxtla Gutiérrez</p>
+                        </div>
+                        <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
+                            <h3 class="text-[#D2691E] font-semibold mb-2">Población</h3>
+                            <p class="text-gray-300">5.5 millones</p>
+                        </div>
+                        <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
+                            <h3 class="text-[#D2691E] font-semibold mb-2">Clima</h3>
+                            <p class="text-gray-300">Tropical</p>
+                        </div>
+                        <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
+                            <h3 class="text-[#D2691E] font-semibold mb-2">Región</h3>
+                            <p class="text-gray-300">Sur de México</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-gradient-to-br from-[#8B4513] to-[#D2691E] rounded-xl p-8">
+                        <h3 class="text-2xl font-bold text-white mb-4">Lugares Emblemáticos</h3>
+                        <ul class="space-y-3 text-white">
+                            <li class="flex items-center gap-3">
+                                <span class="w-2 h-2 bg-white rounded-full"></span>
+                                <span>Palenque - Ruinas mayas</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-2 h-2 bg-white rounded-full"></span>
+                                <span>Cañón del Sumidero</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-2 h-2 bg-white rounded-full"></span>
+                                <span>San Cristóbal de las Casas</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-2 h-2 bg-white rounded-full"></span>
+                                <span>Cascadas de Agua Azul</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-2 h-2 bg-white rounded-full"></span>
+                                <span>Comunidades Tzotziles</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Horizontal Navigation Menu -->
+    <div class="bg-gray-900/95 backdrop-blur-sm border-b border-gray-700 sticky top-16 z-30">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-center space-x-4">
+                <button onclick="mostrarSeccion('recetas')" id="btn-recetas" class="bg-gradient-to-r from-[#8B4513] to-[#D2691E] hover:from-[#D2691E] hover:to-[#8B4513] text-white font-medium py-3 px-6 rounded-lg transition duration-300 shadow-lg flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8.1 13.34l2.83-2.83L3.91 3.5c-1.56 1.56-1.56 4.09 0 5.66l4.19 4.18zm6.78-1.81c1.53.71 3.68.21 5.27-1.38 1.91-1.91 2.28-4.65.81-6.12-1.46-1.46-4.2-1.1-6.12.81-1.59 1.59-2.09 3.74-1.38 5.27L3.7 19.87l1.41 1.41L12 14.41l6.88 6.88 1.41-1.41L13.41 13l1.47-1.47z"></path>
+                    </svg>
+                    Recetas
+                </button>
+                <button onclick="mostrarSeccion('comidas')" id="btn-comidas" class="bg-gray-700 hover:bg-gray-600 text-white font-medium py-3 px-6 rounded-lg transition duration-300 shadow-lg flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"></path>
+                    </svg>
+                    Comidas
+                </button>
+                <button onclick="mostrarSeccion('eventos')" id="btn-eventos" class="bg-gray-700 hover:bg-gray-600 text-white font-medium py-3 px-6 rounded-lg transition duration-300 shadow-lg flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"></path>
+                    </svg>
+                    Eventos
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Container -->
+    <div class="pt-8">
+        <!-- Recetas Section -->
+        <section id="recetas" class="seccion-contenido py-20 bg-[#121212]">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold title-font text-white mb-4">Recetas Tradicionales de Chiapas</h2>
+                    <p class="text-lg text-gray-400 max-w-2xl mx-auto">Descubre los sabores auténticos de la cocina chiapaneca</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-[#D2691E] transition duration-300 cursor-pointer" onclick="abrirModal('tamales-chipilin')">
+                        <div class="w-16 h-16 bg-gradient-to-br from-[#8B4513] to-[#D2691E] rounded-full flex items-center justify-center mb-4">
+                            <span class="text-2xl">🌽</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Tamales de Chipilín</h3>
+                        <p class="text-gray-300 mb-4">Tamales tradicionales rellenos de chipilín, una hierba local que le da un sabor único y característico de la región.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-[#8B4513]/30 text-[#D2691E] text-xs font-medium px-2 py-1 rounded-full">Chipilín</span>
+                            <span class="bg-[#8B4513]/30 text-[#D2691E] text-xs font-medium px-2 py-1 rounded-full">Maíz</span>
+                            <span class="bg-[#8B4513]/30 text-[#D2691E] text-xs font-medium px-2 py-1 rounded-full">Tradicional</span>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <span class="text-[#D2691E] text-sm font-medium">Click para ver receta completa</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-[#D2691E] transition duration-300 cursor-pointer" onclick="abrirModal('chocolate-artesanal')">
+                        <div class="w-16 h-16 bg-gradient-to-br from-[#8B4513] to-[#D2691E] rounded-full flex items-center justify-center mb-4">
+                            <span class="text-2xl">🍫</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Chocolate Artesanal</h3>
+                        <p class="text-gray-300 mb-4">Chocolate tradicional preparado con cacao local, canela y azúcar, servido caliente o frío según la tradición.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-[#8B4513]/30 text-[#D2691E] text-xs font-medium px-2 py-1 rounded-full">Cacao</span>
+                            <span class="bg-[#8B4513]/30 text-[#D2691E] text-xs font-medium px-2 py-1 rounded-full">Canela</span>
+                            <span class="bg-[#8B4513]/30 text-[#D2691E] text-xs font-medium px-2 py-1 rounded-full">Artesanal</span>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <span class="text-[#D2691E] text-sm font-medium">Click para ver receta completa</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-[#D2691E] transition duration-300 cursor-pointer" onclick="abrirModal('pozol-blanco')">
+                        <div class="w-16 h-16 bg-gradient-to-br from-[#8B4513] to-[#D2691E] rounded-full flex items-center justify-center mb-4">
+                            <span class="text-2xl">🥘</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Pozol Blanco</h3>
+                        <p class="text-gray-300 mb-4">Bebida tradicional de maíz fermentado, refrescante y nutritiva, perfecta para el clima cálido de Chiapas.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-[#8B4513]/30 text-[#D2691E] text-xs font-medium px-2 py-1 rounded-full">Maíz</span>
+                            <span class="bg-[#8B4513]/30 text-[#D2691E] text-xs font-medium px-2 py-1 rounded-full">Fermentado</span>
+                            <span class="bg-[#8B4513]/30 text-[#D2691E] text-xs font-medium px-2 py-1 rounded-full">Refrescante</span>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <span class="text-[#D2691E] text-sm font-medium">Click para ver receta completa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comidas Section -->
+        <section id="comidas" class="seccion-contenido py-20 bg-gray-900 hidden">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold title-font text-white mb-4">Platos Típicos de Chiapas</h2>
+                    <p class="text-lg text-gray-400 max-w-2xl mx-auto">Los sabores que definen la gastronomía chiapaneca</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                        <h3 class="text-2xl font-bold text-white mb-4">Cochito Horneado</h3>
+                        <p class="text-gray-300 mb-4">Cerdo horneado en hoja de plátano con especias locales, una especialidad de San Cristóbal de las Casas.</p>
+                        <div class="grid grid-cols-2 gap-4 text-sm">
+                            <div class="bg-gray-700/50 rounded-lg p-3">
+                                <span class="text-[#D2691E] font-semibold">Ingredientes:</span>
+                                <p class="text-gray-300 mt-1">Cerdo, hoja de plátano, achiote, especias</p>
+                            </div>
+                            <div class="bg-gray-700/50 rounded-lg p-3">
+                                <span class="text-[#D2691E] font-semibold">Origen:</span>
+                                <p class="text-gray-300 mt-1">San Cristóbal</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                        <h3 class="text-2xl font-bold text-white mb-4">Sopa de Pan</h3>
+                        <p class="text-gray-300 mb-4">Sopa tradicional con pan, huevo, plátano y especias, servida especialmente en días festivos.</p>
+                        <div class="grid grid-cols-2 gap-4 text-sm">
+                            <div class="bg-gray-700/50 rounded-lg p-3">
+                                <span class="text-[#D2691E] font-semibold">Ingredientes:</span>
+                                <p class="text-gray-300 mt-1">Pan, huevo, plátano, especias</p>
+                            </div>
+                            <div class="bg-gray-700/50 rounded-lg p-3">
+                                <span class="text-[#D2691E] font-semibold">Ocasión:</span>
+                                <p class="text-gray-300 mt-1">Festividades</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Eventos Section -->
+        <section id="eventos" class="seccion-contenido py-20 bg-[#121212] hidden">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold title-font text-white mb-4">Eventos y Festivales</h2>
+                    <p class="text-lg text-gray-400 max-w-2xl mx-auto">Celebraciones que mantienen vivas las tradiciones chiapanecas</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-[#D2691E] transition duration-300">
+                        <div class="w-16 h-16 bg-gradient-to-br from-[#8B4513] to-[#D2691E] rounded-full flex items-center justify-center mb-4">
+                            <span class="text-2xl">🎭</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Fiesta de San Sebastián</h3>
+                        <p class="text-gray-300 mb-4">Celebración en Zinacantán con danzas tradicionales, música y coloridos trajes tzotziles.</p>
+                        <div class="text-sm text-[#D2691E] font-medium">Enero</div>
+                    </div>
+                    
+                    <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-[#D2691E] transition duration-300">
+                        <div class="w-16 h-16 bg-gradient-to-br from-[#8B4513] to-[#D2691E] rounded-full flex items-center justify-center mb-4">
+                            <span class="text-2xl">💀</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Día de Muertos</h3>
+                        <p class="text-gray-300 mb-4">Celebración en San Juan Chamula con rituales mayas únicos y ofrendas tradicionales.</p>
+                        <div class="text-sm text-[#D2691E] font-medium">Noviembre</div>
+                    </div>
+                    
+                    <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-[#D2691E] transition duration-300">
+                        <div class="w-16 h-16 bg-gradient-to-br from-[#8B4513] to-[#D2691E] rounded-full flex items-center justify-center mb-4">
+                            <span class="text-2xl">🌿</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Feria de la Primavera</h3>
+                        <p class="text-gray-300 mb-4">Festival en Tuxtla Gutiérrez con exposiciones culturales, gastronomía y artesanías locales.</p>
+                        <div class="text-sm text-[#D2691E] font-medium">Marzo-Abril</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Recipe Modals -->
+    <!-- Modal Tamales de Chipilín -->
+    <div id="modal-tamales-chipilin" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-gray-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-[#D2691E]/30 shadow-2xl">
+            <div class="sticky top-0 bg-gray-900 rounded-t-2xl p-6 border-b border-[#D2691E]/30">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-3xl font-bold title-font text-white">Tamales de Chipilín</h2>
+                    <button onclick="cerrarModal('tamales-chipilin')" class="text-gray-400 hover:text-white text-2xl font-bold">
+                        ×
+                    </button>
+                </div>
+                <p class="text-gray-300 mt-2">Tamales tradicionales rellenos de chipilín, una hierba local que le da un sabor único y característico de la región.</p>
+            </div>
+            
+            <div class="p-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Ingredientes -->
+                    <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-bold text-[#D2691E] flex items-center gap-2">
+                                <span class="text-2xl">🥘</span>
+                                Ingredientes
+                            </h3>
+                            <button onclick="marcarTodosIngredientes('tamales-chipilin')" class="text-sm bg-[#D2691E] hover:bg-[#8B4513] text-white px-3 py-1 rounded-lg transition duration-300">
+                                Marcar todos
+                            </button>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-700/30 transition duration-200">
+                                <input type="checkbox" id="tamales-chipilin-1" class="w-5 h-5 text-[#D2691E] bg-gray-700 border-gray-600 rounded focus:ring-[#D2691E] focus:ring-2" onchange="actualizarProgreso('tamales-chipilin')">
+                                <label for="tamales-chipilin-1" class="text-gray-300 cursor-pointer flex-1">2 tazas de masa de maíz</label>
+                            </div>
+                            <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-700/30 transition duration-200">
+                                <input type="checkbox" id="tamales-chipilin-2" class="w-5 h-5 text-[#D2691E] bg-gray-700 border-gray-600 rounded focus:ring-[#D2691E] focus:ring-2" onchange="actualizarProgreso('tamales-chipilin')">
+                                <label for="tamales-chipilin-2" class="text-gray-300 cursor-pointer flex-1">1 manojo de chipilín fresco</label>
+                            </div>
+                            <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-700/30 transition duration-200">
+                                <input type="checkbox" id="tamales-chipilin-3" class="w-5 h-5 text-[#D2691E] bg-gray-700 border-gray-600 rounded focus:ring-[#D2691E] focus:ring-2" onchange="actualizarProgreso('tamales-chipilin')">
+                                <label for="tamales-chipilin-3" class="text-gray-300 cursor-pointer flex-1">1/2 taza de manteca de cerdo</label>
+                            </div>
+                            <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-700/30 transition duration-200">
+                                <input type="checkbox" id="tamales-chipilin-4" class="w-5 h-5 text-[#D2691E] bg-gray-700 border-gray-600 rounded focus:ring-[#D2691E] focus:ring-2" onchange="actualizarProgreso('tamales-chipilin')">
+                                <label for="tamales-chipilin-4" class="text-gray-300 cursor-pointer flex-1">Hojas de plátano para envolver</label>
+                            </div>
+                            <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-700/30 transition duration-200">
+                                <input type="checkbox" id="tamales-chipilin-5" class="w-5 h-5 text-[#D2691E] bg-gray-700 border-gray-600 rounded focus:ring-[#D2691E] focus:ring-2" onchange="actualizarProgreso('tamales-chipilin')">
+                                <label for="tamales-chipilin-5" class="text-gray-300 cursor-pointer flex-1">Sal al gusto</label>
+                            </div>
+                        </div>
+                        <!-- Barra de progreso -->
+                        <div class="mt-4">
+                            <div class="flex justify-between text-sm text-gray-400 mb-2">
+                                <span>Progreso de ingredientes</span>
+                                <span id="progreso-tamales-chipilin">0/5</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div id="barra-progreso-tamales-chipilin" class="bg-gradient-to-r from-[#8B4513] to-[#D2691E] h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Procedimiento -->
+                    <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                        <h3 class="text-2xl font-bold text-[#D2691E] mb-4 flex items-center gap-2">
+                            <span class="text-2xl">👨‍🍳</span>
+                            Procedimiento
+                        </h3>
+                        <ol class="space-y-4">
+                            <li class="flex gap-3">
+                                <span class="text-[#D2691E] font-bold min-w-[24px]">1.</span>
+                                <span class="text-gray-300">Lavar y picar finamente el chipilín, reservar.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#D2691E] font-bold min-w-[24px]">2.</span>
+                                <span class="text-gray-300">Batir la masa con la manteca hasta que esté esponjosa.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#D2691E] font-bold min-w-[24px]">3.</span>
+                                <span class="text-gray-300">Incorporar el chipilín picado y la sal, mezclar bien.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#D2691E] font-bold min-w-[24px]">4.</span>
+                                <span class="text-gray-300">Formar bolitas de masa y envolver en hojas de plátano.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#D2691E] font-bold min-w-[24px]">5.</span>
+                                <span class="text-gray-300">Cocinar al vapor por 45-60 minutos hasta que estén firmes.</span>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <!-- Información adicional -->
+                <div class="mt-8 bg-gradient-to-r from-[#8B4513]/20 to-[#D2691E]/20 rounded-xl p-6 border border-[#D2691E]/30">
+                    <h3 class="text-xl font-bold text-white mb-3">Información Nutricional</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                        <div class="text-center">
+                            <span class="text-[#D2691E] font-semibold">Tiempo:</span>
+                            <p class="text-gray-300">1 hora 30 min</p>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-[#D2691E] font-semibold">Porciones:</span>
+                            <p class="text-gray-300">8-10 tamales</p>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-[#D2691E] font-semibold">Dificultad:</span>
+                            <p class="text-gray-300">Media</p>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-[#D2691E] font-semibold">Origen:</span>
+                            <p class="text-gray-300">Chiapas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Chocolate Artesanal -->
+    <div id="modal-chocolate-artesanal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-gray-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-[#D2691E]/30 shadow-2xl">
+            <div class="sticky top-0 bg-gray-900 rounded-t-2xl p-6 border-b border-[#D2691E]/30">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-3xl font-bold title-font text-white">Chocolate Artesanal</h2>
+                    <button onclick="cerrarModal('chocolate-artesanal')" class="text-gray-400 hover:text-white text-2xl font-bold">
+                        ×
+                    </button>
+                </div>
+                <p class="text-gray-300 mt-2">Chocolate tradicional preparado con cacao local, canela y azúcar, servido caliente o frío según la tradición.</p>
+            </div>
+            
+            <div class="p-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Ingredientes -->
+                    <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-bold text-[#D2691E] flex items-center gap-2">
+                                <span class="text-2xl">🍫</span>
+                                Ingredientes
+                            </h3>
+                            <button onclick="marcarTodosIngredientes('chocolate-artesanal')" class="text-sm bg-[#D2691E] hover:bg-[#8B4513] text-white px-3 py-1 rounded-lg transition duration-300">
+                                Marcar todos
+                            </button>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-700/30 transition duration-200">
+                                <input type="checkbox" id="chocolate-artesanal-1" class="w-5 h-5 text-[#D2691E] bg-gray-700 border-gray-600 rounded focus:ring-[#D2691E] focus:ring-2" onchange="actualizarProgreso('chocolate-artesanal')">
+                                <label for="chocolate-artesanal-1" class="text-gray-300 cursor-pointer flex-1">200g de cacao en pasta</label>
+                            </div>
+                            <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-700/30 transition duration-200">
+                                <input type="checkbox" id="chocolate-artesanal-2" class="w-5 h-5 text-[#D2691E] bg-gray-700 border-gray-600 rounded focus:ring-[#D2691E] focus:ring-2" onchange="actualizarProgreso('chocolate-artesanal')">
+                                <label for="chocolate-artesanal-2" class="text-gray-300 cursor-pointer flex-1">1 litro de agua</label>
+                            </div>
+                            <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-700/30 transition duration-200">
+                                <input type="checkbox" id="chocolate-artesanal-3" class="w-5 h-5 text-[#D2691E] bg-gray-700 border-gray-600 rounded focus:ring-[#D2691E] focus:ring-2" onchange="actualizarProgreso('chocolate-artesanal')">
+                                <label for="chocolate-artesanal-3" class="text-gray-300 cursor-pointer flex-1">1 raja de canela</label>
+                            </div>
+                            <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-700/30 transition duration-200">
+                                <input type="checkbox" id="chocolate-artesanal-4" class="w-5 h-5 text-[#D2691E] bg-gray-700 border-gray-600 rounded focus:ring-[#D2691E] focus:ring-2" onchange="actualizarProgreso('chocolate-artesanal')">
+                                <label for="chocolate-artesanal-4" class="text-gray-300 cursor-pointer flex-1">Azúcar al gusto</label>
+                            </div>
+                            <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-700/30 transition duration-200">
+                                <input type="checkbox" id="chocolate-artesanal-5" class="w-5 h-5 text-[#D2691E] bg-gray-700 border-gray-600 rounded focus:ring-[#D2691E] focus:ring-2" onchange="actualizarProgreso('chocolate-artesanal')">
+                                <label for="chocolate-artesanal-5" class="text-gray-300 cursor-pointer flex-1">Pizca de sal</label>
+                            </div>
+                        </div>
+                        <!-- Barra de progreso -->
+                        <div class="mt-4">
+                            <div class="flex justify-between text-sm text-gray-400 mb-2">
+                                <span>Progreso de ingredientes</span>
+                                <span id="progreso-chocolate-artesanal">0/5</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div id="barra-progreso-chocolate-artesanal" class="bg-gradient-to-r from-[#8B4513] to-[#D2691E] h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Procedimiento -->
+                    <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                        <h3 class="text-2xl font-bold text-[#D2691E] mb-4 flex items-center gap-2">
+                            <span class="text-2xl">👨‍🍳</span>
+                            Procedimiento
+                        </h3>
+                        <ol class="space-y-4">
+                            <li class="flex gap-3">
+                                <span class="text-[#D2691E] font-bold min-w-[24px]">1.</span>
+                                <span class="text-gray-300">Calentar el agua en una olla grande hasta que hierva.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#D2691E] font-bold min-w-[24px]">2.</span>
+                                <span class="text-gray-300">Agregar la pasta de cacao y la canela, reducir el fuego.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#D2691E] font-bold min-w-[24px]">3.</span>
+                                <span class="text-gray-300">Cocinar a fuego lento por 20 minutos, revolviendo constantemente.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#D2691E] font-bold min-w-[24px]">4.</span>
+                                <span class="text-gray-300">Agregar azúcar y sal al gusto, continuar cocinando 5 minutos más.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#D2691E] font-bold min-w-[24px]">5.</span>
+                                <span class="text-gray-300">Servir caliente o frío según preferencia.</span>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <!-- Información adicional -->
+                <div class="mt-8 bg-gradient-to-r from-[#8B4513]/20 to-[#D2691E]/20 rounded-xl p-6 border border-[#D2691E]/30">
+                    <h3 class="text-xl font-bold text-white mb-3">Información Nutricional</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                        <div class="text-center">
+                            <span class="text-[#D2691E] font-semibold">Tiempo:</span>
+                            <p class="text-gray-300">30 minutos</p>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-[#D2691E] font-semibold">Porciones:</span>
+                            <p class="text-gray-300">4-6 tazas</p>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-[#D2691E] font-semibold">Dificultad:</span>
+                            <p class="text-gray-300">Fácil</p>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-[#D2691E] font-semibold">Origen:</span>
+                            <p class="text-gray-300">Chiapas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Pozol Blanco -->
+    <div id="modal-pozol-blanco" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-gray-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-[#D2691E]/30 shadow-2xl">
+            <div class="sticky top-0 bg-gray-900 rounded-t-2xl p-6 border-b border-[#D2691E]/30">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-3xl font-bold title-font text-white">Pozol Blanco</h2>
+                    <button onclick="cerrarModal('pozol-blanco')" class="text-gray-400 hover:text-white text-2xl font-bold">
+                        ×
+                    </button>
+                </div>
+                <p class="text-gray-300 mt-2">Bebida tradicional de maíz fermentado, refrescante y nutritiva, perfecta para el clima cálido de Chiapas.</p>
+            </div>
+            
+            <div class="p-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Ingredientes -->
+                    <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-bold text-[#D2691E] flex items-center gap-2">
+                                <span class="text-2xl">🥘</span>
+                                Ingredientes
+                            </h3>
+                            <button onclick="marcarTodosIngredientes('pozol-blanco')" class="text-sm bg-[#D2691E] hover:bg-[#8B4513] text-white px-3 py-1 rounded-lg transition duration-300">
+                                Marcar todos
+                            </button>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-700/30 transition duration-200">
+                                <input type="checkbox" id="pozol-blanco-1" class="w-5 h-5 text-[#D2691E] bg-gray-700 border-gray-600 rounded focus:ring-[#D2691E] focus:ring-2" onchange="actualizarProgreso('pozol-blanco')">
+                                <label for="pozol-blanco-1" class="text-gray-300 cursor-pointer flex-1">1 kg de maíz blanco</label>
+                            </div>
+                            <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-700/30 transition duration-200">
+                                <input type="checkbox" id="pozol-blanco-2" class="w-5 h-5 text-[#D2691E] bg-gray-700 border-gray-600 rounded focus:ring-[#D2691E] focus:ring-2" onchange="actualizarProgreso('pozol-blanco')">
+                                <label for="pozol-blanco-2" class="text-gray-300 cursor-pointer flex-1">Cal (para nixtamalizar)</label>
+                            </div>
+                            <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-700/30 transition duration-200">
+                                <input type="checkbox" id="pozol-blanco-3" class="w-5 h-5 text-[#D2691E] bg-gray-700 border-gray-600 rounded focus:ring-[#D2691E] focus:ring-2" onchange="actualizarProgreso('pozol-blanco')">
+                                <label for="pozol-blanco-3" class="text-gray-300 cursor-pointer flex-1">💧 Agua suficiente</label>
+                            </div>
+                            <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-700/30 transition duration-200">
+                                <input type="checkbox" id="pozol-blanco-4" class="w-5 h-5 text-[#D2691E] bg-gray-700 border-gray-600 rounded focus:ring-[#D2691E] focus:ring-2" onchange="actualizarProgreso('pozol-blanco')">
+                                <label for="pozol-blanco-4" class="text-gray-300 cursor-pointer flex-1">Sal al gusto</label>
+                            </div>
+                        </div>
+                        <!-- Barra de progreso -->
+                        <div class="mt-4">
+                            <div class="flex justify-between text-sm text-gray-400 mb-2">
+                                <span>Progreso de ingredientes</span>
+                                <span id="progreso-pozol-blanco">0/4</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div id="barra-progreso-pozol-blanco" class="bg-gradient-to-r from-[#8B4513] to-[#D2691E] h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Procedimiento -->
+                    <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                        <h3 class="text-2xl font-bold text-[#D2691E] mb-4 flex items-center gap-2">
+                            <span class="text-2xl">👨‍🍳</span>
+                            Procedimiento
+                        </h3>
+                        <ol class="space-y-4">
+                            <li class="flex gap-3">
+                                <span class="text-[#D2691E] font-bold min-w-[24px]">1.</span>
+                                <span class="text-gray-300">Nixtamalizar el maíz con cal durante la noche.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#D2691E] font-bold min-w-[24px]">2.</span>
+                                <span class="text-gray-300">Enjuagar bien el maíz y molerlo hasta obtener una masa suave.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#D2691E] font-bold min-w-[24px]">3.</span>
+                                <span class="text-gray-300">Formar bolitas de masa y dejarlas fermentar por 2-3 días.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#D2691E] font-bold min-w-[24px]">4.</span>
+                                <span class="text-gray-300">Disolver las bolitas en agua fría con sal.</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-[#D2691E] font-bold min-w-[24px]">5.</span>
+                                <span class="text-gray-300">Servir frío como bebida refrescante.</span>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <!-- Información adicional -->
+                <div class="mt-8 bg-gradient-to-r from-[#8B4513]/20 to-[#D2691E]/20 rounded-xl p-6 border border-[#D2691E]/30">
+                    <h3 class="text-xl font-bold text-white mb-3">Información Nutricional</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                        <div class="text-center">
+                            <span class="text-[#D2691E] font-semibold">Tiempo:</span>
+                            <p class="text-gray-300">3 días</p>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-[#D2691E] font-semibold">Porciones:</span>
+                            <p class="text-gray-300">8-10 porciones</p>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-[#D2691E] font-semibold">Dificultad:</span>
+                            <p class="text-gray-300">Difícil</p>
+                        </div>
+                        <div class="text-center">
+                            <span class="text-[#D2691E] font-semibold">Origen:</span>
+                            <p class="text-gray-300">Chiapas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h4 class="text-xl font-bold mb-4">México Tradicional</h4>
+                <p class="text-gray-400 mb-6">Celebrando la riqueza cultural de Chiapas y México</p>
+                <a href="/" class="bg-gradient-to-r from-[#8B4513] to-[#D2691E] hover:from-[#D2691E] hover:to-[#8B4513] text-white font-medium py-2 px-6 rounded-full transition duration-300">
+                    Volver al Inicio
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        document.querySelector('button.md\\:hidden').addEventListener('click', function() {
+            const mobileMenu = document.createElement('div');
+            mobileMenu.className = 'fixed inset-0 bg-black z-50 flex flex-col items-center justify-center';
+            mobileMenu.innerHTML = `
+                <button class="absolute top-4 right-4 text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                <div class="flex flex-col space-y-6 text-center">
+                    <a href="/" class="text-white text-xl font-medium">Inicio</a>
+                    <a href="/#estados" class="text-white text-xl font-medium">Recetas tradicionales</a>
+                    <a href="/#tradiciones" class="text-white text-xl font-medium">Mapa de comidas locales</a>
+                    <a href="/#galeria" class="text-white text-xl font-medium">Eventos y festivales</a>
+                </div>
+            `;
+            document.body.appendChild(mobileMenu);
+            
+            // Close menu
+            mobileMenu.querySelector('button').addEventListener('click', function() {
+                document.body.removeChild(mobileMenu);
+            });
+            
+            // Close menu when clicking on links
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                    document.body.removeChild(mobileMenu);
+                });
+            });
+        });
+
+        // Función para mostrar secciones
+        function mostrarSeccion(seccion) {
+            // Ocultar todas las secciones
+            document.querySelectorAll('.seccion-contenido').forEach(s => {
+                s.classList.add('hidden');
+            });
+            
+            // Mostrar la sección seleccionada
+            document.getElementById(seccion).classList.remove('hidden');
+            
+            // Actualizar estilos de los botones
+            document.querySelectorAll('[id^="btn-"]').forEach(btn => {
+                btn.className = 'bg-gray-700 hover:bg-gray-600 text-white font-medium py-3 px-6 rounded-lg transition duration-300 shadow-lg flex items-center gap-2';
+            });
+            
+            // Resaltar el botón activo
+            document.getElementById(`btn-${seccion}`).className = 'bg-gradient-to-r from-[#8B4513] to-[#D2691E] hover:from-[#D2691E] hover:to-[#8B4513] text-white font-medium py-3 px-6 rounded-lg transition duration-300 shadow-lg flex items-center gap-2';
+        }
+
+        // Mostrar recetas por defecto al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            mostrarSeccion('recetas');
+        });
+
+        // Funciones para los modales de recetas
+        function abrirModal(receta) {
+            const modal = document.getElementById(`modal-${receta}`);
+            if (modal) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevenir scroll del body
+            }
+        }
+
+        function cerrarModal(receta) {
+            const modal = document.getElementById(`modal-${receta}`);
+            if (modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto'; // Restaurar scroll del body
+            }
+        }
+
+        // Cerrar modal al hacer click fuera del contenido
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('fixed') && e.target.classList.contains('bg-black/80')) {
+                e.target.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Cerrar modal con la tecla Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modalesAbiertos = document.querySelectorAll('.fixed.bg-black\\/80:not(.hidden)');
+                modalesAbiertos.forEach(modal => {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                });
+            }
+        });
+
+        // Funciones para ingredientes interactivos
+        function actualizarProgreso(receta) {
+            const checkboxes = document.querySelectorAll(`input[id^="${receta}-"]`);
+            const totalIngredientes = checkboxes.length;
+            let ingredientesMarcados = 0;
+            
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    ingredientesMarcados++;
+                }
+            });
+            
+            const porcentaje = (ingredientesMarcados / totalIngredientes) * 100;
+            const progresoElement = document.getElementById(`progreso-${receta}`);
+            const barraElement = document.getElementById(`barra-progreso-${receta}`);
+            
+            if (progresoElement && barraElement) {
+                progresoElement.textContent = `${ingredientesMarcados}/${totalIngredientes}`;
+                barraElement.style.width = `${porcentaje}%`;
+                
+                // Cambiar color de la barra según el progreso
+                if (porcentaje === 100) {
+                    barraElement.className = 'bg-green-500 h-2 rounded-full transition-all duration-300';
+                    mostrarMensajeCompletado(receta);
+                } else if (porcentaje >= 80) {
+                    barraElement.className = 'bg-yellow-500 h-2 rounded-full transition-all duration-300';
+                } else {
+                    barraElement.className = 'bg-gradient-to-r from-[#8B4513] to-[#D2691E] h-2 rounded-full transition-all duration-300';
+                }
+            }
+        }
+
+        function marcarTodosIngredientes(receta) {
+            const checkboxes = document.querySelectorAll(`input[id^="${receta}-"]`);
+            const todosMarcados = Array.from(checkboxes).every(checkbox => checkbox.checked);
+            
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = !todosMarcados;
+            });
+            
+            actualizarProgreso(receta);
+        }
+
+        function mostrarMensajeCompletado(receta) {
+            // Crear mensaje de felicitación
+            const mensaje = document.createElement('div');
+            mensaje.className = 'fixed top-4 right-4 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg z-60 transform translate-x-full transition-transform duration-500';
+            mensaje.innerHTML = `
+                <div class="flex items-center gap-2">
+                    <span class="text-2xl">🎉</span>
+                    <span>¡Tienes todos los ingredientes!</span>
+                </div>
+            `;
+            
+            document.body.appendChild(mensaje);
+            
+            // Animar entrada
+            setTimeout(() => {
+                mensaje.classList.remove('translate-x-full');
+            }, 100);
+            
+            // Remover después de 3 segundos
+            setTimeout(() => {
+                mensaje.classList.add('translate-x-full');
+                setTimeout(() => {
+                    document.body.removeChild(mensaje);
+                }, 500);
+            }, 3000);
+        }
+
+        // Agregar efectos de hover a los ingredientes
+        document.addEventListener('DOMContentLoaded', function() {
+            // Agregar tooltips a los ingredientes
+            const ingredientes = document.querySelectorAll('input[type="checkbox"]');
+            ingredientes.forEach(checkbox => {
+                checkbox.addEventListener('mouseenter', function() {
+                    const label = this.nextElementSibling;
+                    if (label) {
+                        label.style.color = '#D2691E';
+                        label.style.fontWeight = '600';
+                    }
+                });
+                
+                checkbox.addEventListener('mouseleave', function() {
+                    const label = this.nextElementSibling;
+                    if (label) {
+                        label.style.color = '#D1D5DB';
+                        label.style.fontWeight = '400';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

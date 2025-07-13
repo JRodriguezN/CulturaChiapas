@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="es"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>México Tradicional - Nuestra Cultura</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Montserrat:wght@300;400;600&amp;display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .hero-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d62828' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #d62828;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .gallery-item {
+            overflow: hidden;
+        }
+        .gallery-item img {
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .glow-effect {
+            box-shadow: 0 0 15px rgba(214, 40, 40, 0.3);
+        }
+        .gradient-border {
+            position: relative;
+            border-radius: 0.75rem;
+        }
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #d62828, #f77f00, #fcbf49);
+            border-radius: 0.85rem;
+            z-index: -1;
+            opacity: 0.7;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.bottom-0{bottom:0px}.left-0{left:0px}.right-0{right:0px}.top-0{top:0px}.z-10{z-index:10}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-10{margin-bottom:2.5rem}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.ml-1{margin-left:0.25rem}.ml-3{margin-left:0.75rem}.mr-3{margin-right:0.75rem}.mr-4{margin-right:1rem}.mt-10{margin-top:2.5rem}.mt-4{margin-top:1rem}.mt-8{margin-top:2rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-12{height:3rem}.h-16{height:4rem}.h-20{height:5rem}.h-24{height:6rem}.h-32{height:8rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-64{height:16rem}.h-full{height:100%}.w-10{width:2.5rem}.w-12{width:3rem}.w-16{width:4rem}.w-20{width:5rem}.w-24{width:6rem}.w-32{width:8rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-4xl{max-width:56rem}.shrink-0{flex-shrink:0}.translate-y-10{--tw-translate-y:2.5rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-x-3 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.75rem * var(--tw-space-x-reverse));margin-left:calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-8 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(2rem * var(--tw-space-x-reverse));margin-left:calc(2rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-xl{border-radius:0.75rem}.rounded-l-md{border-top-left-radius:0.375rem;border-bottom-left-radius:0.375rem}.rounded-r-md{border-top-right-radius:0.375rem;border-bottom-right-radius:0.375rem}.border{border-width:1px}.border-2{border-width:2px}.border-t{border-top-width:1px}.border-gray-600{--tw-border-opacity:1;border-color:rgb(75 85 99 / var(--tw-border-opacity, 1))}.border-gray-700{--tw-border-opacity:1;border-color:rgb(55 65 81 / var(--tw-border-opacity, 1))}.border-gray-800{--tw-border-opacity:1;border-color:rgb(31 41 55 / var(--tw-border-opacity, 1))}.border-white{--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity, 1))}.bg-\[\#121212\]{--tw-bg-opacity:1;background-color:rgb(18 18 18 / var(--tw-bg-opacity, 1))}.bg-\[\#d62828\]{--tw-bg-opacity:1;background-color:rgb(214 40 40 / var(--tw-bg-opacity, 1))}.bg-\[\#d62828\]\/20{background-color:rgb(214 40 40 / 0.2)}.bg-\[\#f77f00\]{--tw-bg-opacity:1;background-color:rgb(247 127 0 / var(--tw-bg-opacity, 1))}.bg-\[\#f77f00\]\/20{background-color:rgb(247 127 0 / 0.2)}.bg-\[\#fcbf49\]{--tw-bg-opacity:1;background-color:rgb(252 191 73 / var(--tw-bg-opacity, 1))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-gray-700{--tw-bg-opacity:1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.bg-gray-800{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.bg-gray-800\/80{background-color:rgb(31 41 55 / 0.8)}.bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}.bg-transparent{background-color:transparent}.bg-white\/20{background-color:rgb(255 255 255 / 0.2)}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.from-\[\#d62828\]{--tw-gradient-from:#d62828 var(--tw-gradient-from-position);--tw-gradient-to:rgb(214 40 40 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-\[\#f77f00\]{--tw-gradient-to:#f77f00 var(--tw-gradient-to-position)}.p-10{padding:2.5rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-20{padding-top:5rem;padding-bottom:5rem}.py-24{padding-top:6rem;padding-bottom:6rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.pt-6{padding-top:1.5rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.text-\[\#d62828\]{--tw-text-opacity:1;color:rgb(214 40 40 / var(--tw-text-opacity, 1))}.text-\[\#ff8a8a\]{--tw-text-opacity:1;color:rgb(255 138 138 / var(--tw-text-opacity, 1))}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-white\/80{color:rgb(255 255 255 / 0.8)}.opacity-20{opacity:0.2}.opacity-30{opacity:0.3}.opacity-0{opacity:0}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.duration-700{transition-duration:700ms}.hover\:bg-\[\#c51f1f\]:hover{--tw-bg-opacity:1;background-color:rgb(197 31 31 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-800:hover{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.hover\:bg-white\/10:hover{background-color:rgb(255 255 255 / 0.1)}.hover\:bg-white\/30:hover{background-color:rgb(255 255 255 / 0.3)}.hover\:text-\[\#d62828\]:hover{--tw-text-opacity:1;color:rgb(214 40 40 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-\[\#d62828\]:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(214 40 40 / var(--tw-ring-opacity, 1))}@media (min-width: 640px){.sm\:flex-row{flex-direction:row}}@media (min-width: 768px){.md\:mt-0{margin-top:0px}.md\:flex{display:flex}.md\:hidden{display:none}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:text-6xl{font-size:3.75rem;line-height:1}}@media (min-width: 1024px){.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}}</style></head>
+<body>
+    <!-- Navbar -->
+    <nav class="bg-gray-900 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <svg class="w-10 h-10 text-[#d62828]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm4 0h-2v-6h2v6zm.5-9.5c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5.67-1.5 1.5-1.5 1.5.67 1.5 1.5zm-5 0c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5.67-1.5 1.5-1.5 1.5.67 1.5 1.5z"></path>
+                </svg>
+                <span class="ml-3 text-xl font-bold title-font text-white">México Tradicional</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="nav-link text-gray-300 hover:text-[#d62828] font-medium">Inicio</a>
+                <a href="#estados" class="nav-link text-gray-300 hover:text-[#d62828] font-medium">Recetas tradicionales</a>
+                <a href="#tradiciones" class="nav-link text-gray-300 hover:text-[#d62828] font-medium">Mapa de comidas locales</a>
+                <a href="#galeria" class="nav-link text-gray-300 hover:text-[#d62828] font-medium">Eventos y fetivales</a>
+            </div>
+            <button class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative bg-gray-900 hero-pattern">
+        <div class="container mx-auto px-4 py-24 flex flex-col items-center">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-6xl font-bold text-white title-font mb-6">Descubre la Magia de México</h1>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">Un viaje a través de nuestras tradiciones, colores y sabores que han forjado nuestra identidad cultural a lo largo de los siglos.</p>
+                
+                <!-- Buscador Grande -->
+                <div class="max-w-4xl mx-auto">
+                    <div class="relative">
+                        <div class="relative bg-white/10 backdrop-blur-sm rounded-2xl p-2 border border-white/20 shadow-2xl">
+                            <div class="flex flex-col lg:flex-row gap-2">
+                                <!-- Campo de búsqueda principal -->
+                                <div class="flex-1 relative">
+                                    <input 
+                                        type="text" 
+                                        id="searchInput"
+                                        placeholder="Buscar estados, recetas, comidas, eventos o festivales..."
+                                        class="w-full bg-white/90 text-gray-800 placeholder-gray-600 px-6 py-4 rounded-xl text-lg focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:bg-white transition-all duration-300"
+                                    >
+                                    <svg class="absolute right-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                    </svg>
+                                </div>
+                                
+                                <!-- Botón de búsqueda -->
+                                <button 
+                                    onclick="realizarBusqueda()"
+                                    class="bg-[#d4af37] hover:bg-[#b8941f] text-black font-semibold px-8 py-4 rounded-xl transition duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2 min-w-[140px]"
+                                >
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                    </svg>
+                                    Buscar
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Sugerencias de búsqueda -->
+                        <div id="searchSuggestions" class="absolute top-full left-0 right-0 mt-2 bg-white/95 backdrop-blur-sm rounded-xl border border-white/20 shadow-2xl z-50 hidden">
+                            <div class="p-4">
+                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                                    <!-- Estados -->
+                                    <div>
+                                        <h3 class="text-[#d4af37] font-semibold mb-2 flex items-center gap-2">
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm4 0h-2v-6h2v6zm.5-9.5c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5.67-1.5 1.5-1.5 1.5.67 1.5 1.5zm-5 0c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5.67-1.5 1.5-1.5 1.5.67 1.5 1.5z"></path>
+                                            </svg>
+                                            Estados
+                                        </h3>
+                                        <div class="space-y-1">
+                                            <div class="suggestion-item text-gray-700 hover:text-[#d4af37] cursor-pointer py-1 px-2 rounded hover:bg-gray-100 transition-colors" data-search="Chiapas">Chiapas</div>
+                                            <div class="suggestion-item text-gray-700 hover:text-[#d4af37] cursor-pointer py-1 px-2 rounded hover:bg-gray-100 transition-colors" data-search="Oaxaca">Oaxaca</div>
+                                            <div class="suggestion-item text-gray-700 hover:text-[#d4af37] cursor-pointer py-1 px-2 rounded hover:bg-gray-100 transition-colors" data-search="Jalisco">Jalisco</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Recetas -->
+                                    <div>
+                                        <h3 class="text-[#d4af37] font-semibold mb-2 flex items-center gap-2">
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M8.1 13.34l2.83-2.83L3.91 3.5c-1.56 1.56-1.56 4.09 0 5.66l4.19 4.18zm6.78-1.81c1.53.71 3.68.21 5.27-1.38 1.91-1.91 2.28-4.65.81-6.12-1.46-1.46-4.2-1.1-6.12.81-1.59 1.59-2.09 3.74-1.38 5.27L3.7 19.87l1.41 1.41L12 14.41l6.88 6.88 1.41-1.41L13.41 13l1.47-1.47z"></path>
+                                            </svg>
+                                            Recetas
+                                        </h3>
+                                        <div class="space-y-1">
+                                            <div class="suggestion-item text-gray-700 hover:text-[#d4af37] cursor-pointer py-1 px-2 rounded hover:bg-gray-100 transition-colors" data-search="Mole">Mole</div>
+                                            <div class="suggestion-item text-gray-700 hover:text-[#d4af37] cursor-pointer py-1 px-2 rounded hover:bg-gray-100 transition-colors" data-search="Tacos">Tacos</div>
+                                            <div class="suggestion-item text-gray-700 hover:text-[#d4af37] cursor-pointer py-1 px-2 rounded hover:bg-gray-100 transition-colors" data-search="Tamales">Tamales</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Comidas -->
+                                    <div>
+                                        <h3 class="text-[#d4af37] font-semibold mb-2 flex items-center gap-2">
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"></path>
+                                            </svg>
+                                            Comidas
+                                        </h3>
+                                        <div class="space-y-1">
+                                            <div class="suggestion-item text-gray-700 hover:text-[#d4af37] cursor-pointer py-1 px-2 rounded hover:bg-gray-100 transition-colors" data-search="Pozole">Pozole</div>
+                                            <div class="suggestion-item text-gray-700 hover:text-[#d4af37] cursor-pointer py-1 px-2 rounded hover:bg-gray-100 transition-colors" data-search="Enchiladas">Enchiladas</div>
+                                            <div class="suggestion-item text-gray-700 hover:text-[#d4af37] cursor-pointer py-1 px-2 rounded hover:bg-gray-100 transition-colors" data-search="Chiles">Chiles Rellenos</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Eventos -->
+                                    <div>
+                                        <h3 class="text-[#d4af37] font-semibold mb-2 flex items-center gap-2">
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"></path>
+                                            </svg>
+                                            Eventos
+                                        </h3>
+                                        <div class="space-y-1">
+                                            <div class="suggestion-item text-gray-700 hover:text-[#d4af37] cursor-pointer py-1 px-2 rounded hover:bg-gray-100 transition-colors" data-search="Guelaguetza">Guelaguetza</div>
+                                            <div class="suggestion-item text-gray-700 hover:text-[#d4af37] cursor-pointer py-1 px-2 rounded hover:bg-gray-100 transition-colors" data-search="Día de Muertos">Día de Muertos</div>
+                                            <div class="suggestion-item text-gray-700 hover:text-[#d4af37] cursor-pointer py-1 px-2 rounded hover:bg-gray-100 transition-colors" data-search="Feria">Feria de San Marcos</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relative bottom-0 left-0 right-0" style="z-index: 1;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#121212" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Estados Destacados Section -->
+    <section id="estados" class="py-20 bg-[#121212]">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold title-font text-white mb-4">Estados Destacados</h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto">Cada estado de México tiene su propia identidad cultural, tradiciones y artesanías que los hacen únicos.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Chiapas Card -->
+                <div class="card bg-gray-800/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-2xl border border-gray-700/50 transition-all duration-700 opacity-0 translate-y-10 hover:transform hover:scale-105 hover:shadow-[#8B4513]/20">
+                    <div class="h-48 relative overflow-hidden bg-cover bg-center" style="background-image: url('/static/img/Chiapas.jpg');">
+                        <div class="absolute inset-0 bg-black/40"></div>
+                        <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1">
+                            <span class="text-white text-sm font-semibold">Sur</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-2xl font-bold title-font text-white">Chiapas</h3>
+                            <span class="text-[#D2691E] text-sm font-medium">Capital: Tuxtla Gutiérrez</span>
+                        </div>
+                        
+                        <div class="space-y-3 mb-4">
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                Hogar de impresionantes ruinas mayas, el Cañón del Sumidero y las comunidades indígenas tzotziles y tzeltales con sus coloridas tradiciones textiles.
+                            </p>
+                            
+                            <div class="grid grid-cols-2 gap-3 text-xs">
+                                <div class="bg-gray-700/50 rounded-lg p-2">
+                                    <span class="text-[#D2691E] font-semibold">Población:</span>
+                                    <span class="text-gray-300 block">5.5 millones</span>
+                                </div>
+                                <div class="bg-gray-700/50 rounded-lg p-2">
+                                    <span class="text-[#D2691E] font-semibold">Clima:</span>
+                                    <span class="text-gray-300 block">Tropical</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-[#8B4513]/30 text-[#D2691E] text-xs font-medium px-3 py-1 rounded-full border border-[#8B4513]/50">Palenque</span>
+                            <span class="bg-[#8B4513]/30 text-[#D2691E] text-xs font-medium px-3 py-1 rounded-full border border-[#8B4513]/50">San Cristóbal</span>
+                            <span class="bg-[#8B4513]/30 text-[#D2691E] text-xs font-medium px-3 py-1 rounded-full border border-[#8B4513]/50">Textiles</span>
+                        </div>
+                        
+                        <a href="/chiapas" class="w-full bg-gradient-to-r from-[#8B4513] to-[#D2691E] hover:from-[#D2691E] hover:to-[#8B4513] text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2">
+                            <span>Descubrir más</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Oaxaca Card -->
+                <div class="card bg-gray-800/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-2xl border border-gray-700/50 transition-all duration-700 opacity-0 translate-y-10 hover:transform hover:scale-105 hover:shadow-[#D4AF37]/20">
+                    <div class="h-48 relative overflow-hidden bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="absolute inset-0 bg-black/40"></div>
+                        <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1">
+                            <span class="text-white text-sm font-semibold">Sur</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-2xl font-bold title-font text-white">Oaxaca</h3>
+                            <span class="text-[#D4AF37] text-sm font-medium">Capital: Oaxaca de Juárez</span>
+                        </div>
+                        
+                        <div class="space-y-3 mb-4">
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                Famoso por su rica gastronomía, mezcal, y las celebraciones del Día de Muertos. Cuna de la cultura zapoteca y mixteca con su impresionante sitio arqueológico de Monte Albán.
+                            </p>
+                            
+                            <div class="grid grid-cols-2 gap-3 text-xs">
+                                <div class="bg-gray-700/50 rounded-lg p-2">
+                                    <span class="text-[#D4AF37] font-semibold">Población:</span>
+                                    <span class="text-gray-300 block">4.1 millones</span>
+                                </div>
+                                <div class="bg-gray-700/50 rounded-lg p-2">
+                                    <span class="text-[#D4AF37] font-semibold">Clima:</span>
+                                    <span class="text-gray-300 block">Templado</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-[#D4AF37]/30 text-[#FFD700] text-xs font-medium px-3 py-1 rounded-full border border-[#D4AF37]/50">Mezcal</span>
+                            <span class="bg-[#D4AF37]/30 text-[#FFD700] text-xs font-medium px-3 py-1 rounded-full border border-[#D4AF37]/50">Alebrijes</span>
+                            <span class="bg-[#D4AF37]/30 text-[#FFD700] text-xs font-medium px-3 py-1 rounded-full border border-[#D4AF37]/50">Mole</span>
+                        </div>
+                        
+                        <button class="w-full bg-gradient-to-r from-[#D4AF37] to-[#FFD700] hover:from-[#FFD700] hover:to-[#D4AF37] text-black font-medium py-2 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2">
+                            <span>Descubrir más</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Jalisco Card -->
+                <div class="card bg-gray-800/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-2xl border border-gray-700/50 transition-all duration-700 opacity-0 translate-y-10 hover:transform hover:scale-105 hover:shadow-[#C0C0C0]/20">
+                    <div class="h-48 relative overflow-hidden bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="absolute inset-0 bg-black/40"></div>
+                        <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1">
+                            <span class="text-white text-sm font-semibold">Occidente</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-2xl font-bold title-font text-white">Jalisco</h3>
+                            <span class="text-[#C0C0C0] text-sm font-medium">Capital: Guadalajara</span>
+                        </div>
+                        
+                        <div class="space-y-3 mb-4">
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                Tierra del tequila, mariachi y charrería. Guadalajara, su capital, es conocida como la Perla de Occidente y es cuna de muchas tradiciones mexicanas.
+                            </p>
+                            
+                            <div class="grid grid-cols-2 gap-3 text-xs">
+                                <div class="bg-gray-700/50 rounded-lg p-2">
+                                    <span class="text-[#C0C0C0] font-semibold">Población:</span>
+                                    <span class="text-gray-300 block">8.3 millones</span>
+                                </div>
+                                <div class="bg-gray-700/50 rounded-lg p-2">
+                                    <span class="text-[#C0C0C0] font-semibold">Clima:</span>
+                                    <span class="text-gray-300 block">Templado</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-[#C0C0C0]/30 text-[#E5E4E2] text-xs font-medium px-3 py-1 rounded-full border border-[#C0C0C0]/50">Tequila</span>
+                            <span class="bg-[#C0C0C0]/30 text-[#E5E4E2] text-xs font-medium px-3 py-1 rounded-full border border-[#C0C0C0]/50">Mariachi</span>
+                            <span class="bg-[#C0C0C0]/30 text-[#E5E4E2] text-xs font-medium px-3 py-1 rounded-full border border-[#C0C0C0]/50">Charrería</span>
+                        </div>
+                        
+                        <button class="w-full bg-gradient-to-r from-[#C0C0C0] to-[#E5E4E2] hover:from-[#E5E4E2] hover:to-[#C0C0C0] text-black font-medium py-2 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2">
+                            <span>Descubrir más</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tradiciones Section 
+    <section id="tradiciones" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold title-font text-white mb-4">Tradiciones Emblemáticas</h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto">Descubre las tradiciones que han definido nuestra identidad cultural a través de generaciones.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                 Día de Muertos 
+                <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-gray-800 transition duration-300 border border-gray-700">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-[#fcbf49] rounded-full flex items-center justify-center">
+                        <span class="text-4xl">💀</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Día de Muertos</h3>
+                    <p class="text-gray-400">Una celebración que honra a los difuntos con altares, ofrendas y calaveras de azúcar.</p>
+                </div>
+                
+            Danza de los Voladores
+                <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-gray-800 transition duration-300 border border-gray-700">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-[#f77f00] rounded-full flex items-center justify-center">
+                        <span class="text-4xl">🪁</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Danza de los Voladores</h3>
+                    <p class="text-gray-400">Ritual ancestral donde danzantes descienden desde un poste de 30 metros de altura.</p>
+                </div>
+                
+                Guelaguetza
+                <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-gray-800 transition duration-300 border border-gray-700">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-[#d62828] rounded-full flex items-center justify-center">
+                        <span class="text-4xl">💃</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Guelaguetza</h3>
+                    <p class="text-gray-400">Festival oaxaqueño que celebra la diversidad cultural con danzas regionales y trajes típicos.</p>
+                </div>
+                
+            Charrería
+                <div class="bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-gray-800 transition duration-300 border border-gray-700">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-[#fcbf49] rounded-full flex items-center justify-center">
+                        <span class="text-4xl">🐎</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Charrería</h3>
+                    <p class="text-gray-400">Deporte nacional que muestra las habilidades ecuestres de los charros mexicanos.</p>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+    <!-- Galería Section
+    <section id="galeria" class="py-20 bg-[#121212]">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold title-font text-white mb-4">Galería Cultural</h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto">Un vistazo a la riqueza visual de nuestras tradiciones y artesanías.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Gallery Item 1
+                <div class="gallery-item rounded-lg overflow-hidden transition-all duration-700 opacity-0 translate-y-10">
+                    <div class="bg-[#f77f00] h-64 flex items-center justify-center">
+                        <svg class="w-24 h-24 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7z"></path>
+                            <path d="M15 12c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3z"></path>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2
+                <div class="gallery-item rounded-lg overflow-hidden transition-all duration-700 opacity-0 translate-y-10">
+                    <div class="bg-[#fcbf49] h-64 flex items-center justify-center">
+                        <svg class="w-24 h-24 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 15.5h-1.5V14h-1v3H8v-3H7v4.5H5.5v-5c0-.55.45-1 1-1H11c.55 0 1 .45 1 1v5zm3.5 0H14v-6h3.5c.55 0 1 .45 1 1V16c0 .55-.45 1-1 1h-2v1.5zm-1-4.5H17v1.5h-2.5V14z"></path>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3
+                <div class="gallery-item rounded-lg overflow-hidden transition-all duration-700 opacity-0 translate-y-10">
+                    <div class="bg-[#d62828] h-64 flex items-center justify-center">
+                        <svg class="w-24 h-24 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9h10v2H7z"></path>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4
+                <div class="gallery-item rounded-lg overflow-hidden transition-all duration-700 opacity-0 translate-y-10">
+                    <div class="bg-gray-800 h-64 flex items-center justify-center">
+                        <svg class="w-24 h-24 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-14h2v8h-2zm0 10h2v2h-2z"></path>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5
+                <div class="gallery-item rounded-lg overflow-hidden transition-all duration-700 opacity-0 translate-y-10">
+                    <div class="bg-gray-800 h-64 flex items-center justify-center">
+                        <svg class="w-24 h-24 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-14h2v8h-2zm0 10h2v2h-2z"></path>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6
+                <div class="gallery-item rounded-lg overflow-hidden transition-all duration-700 opacity-0 translate-y-10">
+                    <div class="bg-[#d62828] h-64 flex items-center justify-center">
+                        <svg class="w-24 h-24 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9h10v2H7z"></path>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 7
+                <div class="gallery-item rounded-lg overflow-hidden transition-all duration-700 opacity-0 translate-y-10">
+                    <div class="bg-[#fcbf49] h-64 flex items-center justify-center">
+                        <svg class="w-24 h-24 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 15.5h-1.5V14h-1v3H8v-3H7v4.5H5.5v-5c0-.55.45-1 1-1H11c.55 0 1 .45 1 1v5zm3.5 0H14v-6h3.5c.55 0 1 .45 1 1V16c0 .55-.45 1-1 1h-2v1.5zm-1-4.5H17v1.5h-2.5V14z"></path>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 8
+                <div class="gallery-item rounded-lg overflow-hidden transition-all duration-700 opacity-0 translate-y-10">
+                    <div class="bg-[#f77f00] h-64 flex items-center justify-center">
+                        <svg class="w-24 h-24 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7z"></path>
+                            <path d="M15 12c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <button class="bg-[#d62828] hover:bg-[#c51f1f] text-white font-medium py-3 px-8 rounded-full transition duration-300 shadow-lg glow-effect">Ver Más Imágenes</button>
+            </div>
+        </div>
+    </section>-->
+
+
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">México Tradicional</h4>
+                    <p class="text-gray-400">Celebrando la riqueza cultural y las tradiciones de nuestro hermoso país.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Inicio</a></li>
+                        <li><a href="#estados" class="text-gray-400 hover:text-white transition duration-300">Estados</a></li>
+                        <li><a href="#tradiciones" class="text-gray-400 hover:text-white transition duration-300">Tradiciones</a></li>
+                        <li><a href="#galeria" class="text-gray-400 hover:text-white transition duration-300">Galería</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Recursos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Eventos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Artesanos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Turismo Cultural</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Boletín</h4>
+                    <p class="text-gray-400 mb-4">Suscríbete para recibir noticias sobre eventos culturales y tradiciones.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Tu correo" class="px-4 py-2 rounded-l-md w-full focus:outline-none bg-gray-800 border border-gray-700 text-white">
+                        <button class="bg-[#d62828] hover:bg-[#c51f1f] px-4 py-2 rounded-r-md transition duration-300">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">© 2023 México Tradicional. Todos los derechos reservados.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-500 hover:text-white transition duration-300">Política de Privacidad</a>
+                    <a href="#" class="text-gray-500 hover:text-white transition duration-300">Términos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('button.md\\:hidden').addEventListener('click', function() {
+            const mobileMenu = document.createElement('div');
+            mobileMenu.className = 'fixed inset-0 bg-black z-50 flex flex-col items-center justify-center';
+            mobileMenu.innerHTML = `
+                <button class="absolute top-4 right-4 text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                <div class="flex flex-col space-y-6 text-center">
+                    <a href="#" class="text-white text-xl font-medium">Inicio</a>
+                    <a href="#estados" class="text-white text-xl font-medium">Estados</a>
+                    <a href="#tradiciones" class="text-white text-xl font-medium">Tradiciones</a>
+                    <a href="#galeria" class="text-white text-xl font-medium">Galería</a>
+                    <a href="#contacto" class="text-white text-xl font-medium">Contacto</a>
+                </div>
+            `;
+            document.body.appendChild(mobileMenu);
+            
+            // Close menu
+            mobileMenu.querySelector('button').addEventListener('click', function() {
+                document.body.removeChild(mobileMenu);
+            });
+            
+            // Close menu when clicking on links
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                    document.body.removeChild(mobileMenu);
+                });
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add subtle animation to cards on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card, .gallery-item').forEach(item => {
+            item.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(item);
+        });
+
+        // Funcionalidad del buscador
+        const searchInput = document.getElementById('searchInput');
+        const searchSuggestions = document.getElementById('searchSuggestions');
+        const suggestionItems = document.querySelectorAll('.suggestion-item');
+
+        // Mostrar sugerencias al hacer focus en el input
+        searchInput.addEventListener('focus', function() {
+            searchSuggestions.classList.remove('hidden');
+        });
+
+        // Ocultar sugerencias al hacer click fuera
+        document.addEventListener('click', function(e) {
+            if (!searchInput.contains(e.target) && !searchSuggestions.contains(e.target)) {
+                searchSuggestions.classList.add('hidden');
+            }
+        });
+
+        // Manejar clicks en sugerencias
+        suggestionItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const searchTerm = this.getAttribute('data-search');
+                searchInput.value = searchTerm;
+                searchSuggestions.classList.add('hidden');
+                realizarBusqueda();
+            });
+        });
+
+        // Función para realizar búsqueda
+        function realizarBusqueda() {
+            const searchTerm = searchInput.value.trim();
+            if (searchTerm) {
+                // Aquí puedes implementar la lógica de búsqueda
+                // Por ahora, mostraremos un mensaje
+                alert(`Buscando: ${searchTerm}\n\nEsta funcionalidad se puede conectar con el backend para mostrar resultados específicos.`);
+                
+                // Ejemplo de navegación basada en el término de búsqueda
+                const searchTermLower = searchTerm.toLowerCase();
+                
+                if (['chiapas', 'oaxaca', 'jalisco'].includes(searchTermLower)) {
+                    // Navegar a la sección de estados
+                    const estadosSection = document.getElementById('estados');
+                    if (estadosSection) {
+                        estadosSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                } else if (['mole', 'tacos', 'tamales', 'pozole', 'enchiladas', 'chiles'].includes(searchTermLower)) {
+                    // Aquí podrías navegar a una sección de gastronomía
+                    alert(`Mostrando recetas y comidas relacionadas con: ${searchTerm}`);
+                } else if (['guelaguetza', 'día de muertos', 'feria'].includes(searchTermLower)) {
+                    // Aquí podrías navegar a una sección de eventos
+                    alert(`Mostrando eventos y festivales relacionados con: ${searchTerm}`);
+                }
+            }
+        }
+
+        // Permitir búsqueda con Enter
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                realizarBusqueda();
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'95d4c32757c2b6e1',t:'MTc1MjE5OTgwNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+
+</body></html>
