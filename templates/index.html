@@ -218,144 +218,59 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Chiapas Card -->
-                <div class="card bg-gray-800/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-2xl border border-gray-700/50 transition-all duration-700 opacity-0 translate-y-10 hover:transform hover:scale-105 hover:shadow-[#8B4513]/20">
-                    <div class="h-48 relative overflow-hidden bg-cover bg-center" style="background-image: url('/static/img/Chiapas.jpg');">
-                        <div class="absolute inset-0 bg-black/40"></div>
-                        <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1">
-                            <span class="text-white text-sm font-semibold">Sur</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <h3 class="text-2xl font-bold title-font text-white">Chiapas</h3>
-                            <span class="text-[#D2691E] text-sm font-medium">Capital: Tuxtla Gutiérrez</span>
-                        </div>
-                        
-                        <div class="space-y-3 mb-4">
-                            <p class="text-gray-300 text-sm leading-relaxed">
-                                Hogar de impresionantes ruinas mayas, el Cañón del Sumidero y las comunidades indígenas tzotziles y tzeltales con sus coloridas tradiciones textiles.
-                            </p>
-                            
-                            <div class="grid grid-cols-2 gap-3 text-xs">
-                                <div class="bg-gray-700/50 rounded-lg p-2">
-                                    <span class="text-[#D2691E] font-semibold">Población:</span>
-                                    <span class="text-gray-300 block">5.5 millones</span>
-                                </div>
-                                <div class="bg-gray-700/50 rounded-lg p-2">
-                                    <span class="text-[#D2691E] font-semibold">Clima:</span>
-                                    <span class="text-gray-300 block">Tropical</span>
-                                </div>
+                {% if estados %}
+                    {% for key, estado in estados.items() %}
+                    <div class="card bg-gray-800/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-2xl border border-gray-700/50 transition-all duration-700 opacity-0 translate-y-10 hover:transform hover:scale-105">
+                        <div class="h-48 relative overflow-hidden bg-cover bg-center" style="background-image: url('{{ estado.imagen }}');">
+                            <div class="absolute inset-0 bg-black/40"></div>
+                            <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1">
+                                <span class="text-white text-sm font-semibold">{{ estado.region }}</span>
                             </div>
                         </div>
-                        
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-[#8B4513]/30 text-[#D2691E] text-xs font-medium px-3 py-1 rounded-full border border-[#8B4513]/50">Palenque</span>
-                            <span class="bg-[#8B4513]/30 text-[#D2691E] text-xs font-medium px-3 py-1 rounded-full border border-[#8B4513]/50">San Cristóbal</span>
-                            <span class="bg-[#8B4513]/30 text-[#D2691E] text-xs font-medium px-3 py-1 rounded-full border border-[#8B4513]/50">Textiles</span>
-                        </div>
-                        
-                        <a href="/chiapas" class="w-full bg-gradient-to-r from-[#8B4513] to-[#D2691E] hover:from-[#D2691E] hover:to-[#8B4513] text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2">
-                            <span>Descubrir más</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Oaxaca Card -->
-                <div class="card bg-gray-800/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-2xl border border-gray-700/50 transition-all duration-700 opacity-0 translate-y-10 hover:transform hover:scale-105 hover:shadow-[#D4AF37]/20">
-                    <div class="h-48 relative overflow-hidden bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
-                        <div class="absolute inset-0 bg-black/40"></div>
-                        <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1">
-                            <span class="text-white text-sm font-semibold">Sur</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <h3 class="text-2xl font-bold title-font text-white">Oaxaca</h3>
-                            <span class="text-[#D4AF37] text-sm font-medium">Capital: Oaxaca de Juárez</span>
-                        </div>
-                        
-                        <div class="space-y-3 mb-4">
-                            <p class="text-gray-300 text-sm leading-relaxed">
-                                Famoso por su rica gastronomía, mezcal, y las celebraciones del Día de Muertos. Cuna de la cultura zapoteca y mixteca con su impresionante sitio arqueológico de Monte Albán.
-                            </p>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-2xl font-bold title-font text-white">{{ estado.nombre }}</h3>
+                                <span class="text-sm font-medium" style="color: {{ estado.color_light }};">Capital: {{ estado.capital }}</span>
+                            </div>
                             
-                            <div class="grid grid-cols-2 gap-3 text-xs">
-                                <div class="bg-gray-700/50 rounded-lg p-2">
-                                    <span class="text-[#D4AF37] font-semibold">Población:</span>
-                                    <span class="text-gray-300 block">4.1 millones</span>
-                                </div>
-                                <div class="bg-gray-700/50 rounded-lg p-2">
-                                    <span class="text-[#D4AF37] font-semibold">Clima:</span>
-                                    <span class="text-gray-300 block">Templado</span>
+                            <div class="space-y-3 mb-4">
+                                <p class="text-gray-300 text-sm leading-relaxed">
+                                    {{ estado.descripcion }}
+                                </p>
+                                
+                                <div class="grid grid-cols-2 gap-3 text-xs">
+                                    <div class="bg-gray-700/50 rounded-lg p-2">
+                                        <span class="font-semibold" style="color: {{ estado.color_light }};">Población:</span>
+                                        <span class="text-gray-300 block">{{ estado.poblacion }}</span>
+                                    </div>
+                                    <div class="bg-gray-700/50 rounded-lg p-2">
+                                        <span class="font-semibold" style="color: {{ estado.color_light }};">Clima:</span>
+                                        <span class="text-gray-300 block">{{ estado.clima }}</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-[#D4AF37]/30 text-[#FFD700] text-xs font-medium px-3 py-1 rounded-full border border-[#D4AF37]/50">Mezcal</span>
-                            <span class="bg-[#D4AF37]/30 text-[#FFD700] text-xs font-medium px-3 py-1 rounded-full border border-[#D4AF37]/50">Alebrijes</span>
-                            <span class="bg-[#D4AF37]/30 text-[#FFD700] text-xs font-medium px-3 py-1 rounded-full border border-[#D4AF37]/50">Mole</span>
-                        </div>
-                        
-                        <button class="w-full bg-gradient-to-r from-[#D4AF37] to-[#FFD700] hover:from-[#FFD700] hover:to-[#D4AF37] text-black font-medium py-2 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2">
-                            <span>Descubrir más</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Jalisco Card -->
-                <div class="card bg-gray-800/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-2xl border border-gray-700/50 transition-all duration-700 opacity-0 translate-y-10 hover:transform hover:scale-105 hover:shadow-[#C0C0C0]/20">
-                    <div class="h-48 relative overflow-hidden bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
-                        <div class="absolute inset-0 bg-black/40"></div>
-                        <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1">
-                            <span class="text-white text-sm font-semibold">Occidente</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <h3 class="text-2xl font-bold title-font text-white">Jalisco</h3>
-                            <span class="text-[#C0C0C0] text-sm font-medium">Capital: Guadalajara</span>
-                        </div>
-                        
-                        <div class="space-y-3 mb-4">
-                            <p class="text-gray-300 text-sm leading-relaxed">
-                                Tierra del tequila, mariachi y charrería. Guadalajara, su capital, es conocida como la Perla de Occidente y es cuna de muchas tradiciones mexicanas.
-                            </p>
                             
-                            <div class="grid grid-cols-2 gap-3 text-xs">
-                                <div class="bg-gray-700/50 rounded-lg p-2">
-                                    <span class="text-[#C0C0C0] font-semibold">Población:</span>
-                                    <span class="text-gray-300 block">8.3 millones</span>
-                                </div>
-                                <div class="bg-gray-700/50 rounded-lg p-2">
-                                    <span class="text-[#C0C0C0] font-semibold">Clima:</span>
-                                    <span class="text-gray-300 block">Templado</span>
-                                </div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                {% for etiqueta in estado.etiqueta %}
+                                <span class="text-xs font-medium px-3 py-1 rounded-full border" style="background-color: {{ estado.color }}30; color: {{ estado.color_light }}; border-color: {{ estado.color }}50;">{{ etiqueta }}</span>
+                                {% endfor %}
                             </div>
+                            
+                            <a href="/estado/{{ key }}" class="w-full text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 hover:opacity-90" style="background: linear-gradient(to right, {{ estado.color }}, {{ estado.color_light }});">
+                                <span>Descubrir más</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
                         </div>
-                        
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-[#C0C0C0]/30 text-[#E5E4E2] text-xs font-medium px-3 py-1 rounded-full border border-[#C0C0C0]/50">Tequila</span>
-                            <span class="bg-[#C0C0C0]/30 text-[#E5E4E2] text-xs font-medium px-3 py-1 rounded-full border border-[#C0C0C0]/50">Mariachi</span>
-                            <span class="bg-[#C0C0C0]/30 text-[#E5E4E2] text-xs font-medium px-3 py-1 rounded-full border border-[#C0C0C0]/50">Charrería</span>
-                        </div>
-                        
-                        <button class="w-full bg-gradient-to-r from-[#C0C0C0] to-[#E5E4E2] hover:from-[#E5E4E2] hover:to-[#C0C0C0] text-black font-medium py-2 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2">
-                            <span>Descubrir más</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </button>
                     </div>
-                </div>
+                    {% endfor %}
+                {% else %}
+                    <!-- Fallback si no hay datos -->
+                    <div class="col-span-full text-center text-gray-400">
+                        <p>No hay estados disponibles en este momento.</p>
+                    </div>
+                {% endif %}
             </div>
         </div>
     </section>
@@ -624,58 +539,93 @@
         });
 
         // Funcionalidad del buscador
-        const searchInput = document.getElementById('searchInput');
-        const searchSuggestions = document.getElementById('searchSuggestions');
-        const suggestionItems = document.querySelectorAll('.suggestion-item');
+        // Obtener los datos de estados desde una variable de contexto (inyectada en un script)
+        const estadosData = {{ estados|tojson }};
+        let recetasData = {};
 
-        // Mostrar sugerencias al hacer focus en el input
-        searchInput.addEventListener('focus', function() {
-            searchSuggestions.classList.remove('hidden');
-        });
-
-        // Ocultar sugerencias al hacer click fuera
-        document.addEventListener('click', function(e) {
-            if (!searchInput.contains(e.target) && !searchSuggestions.contains(e.target)) {
-                searchSuggestions.classList.add('hidden');
-            }
-        });
-
-        // Manejar clicks en sugerencias
-        suggestionItems.forEach(item => {
-            item.addEventListener('click', function() {
-                const searchTerm = this.getAttribute('data-search');
-                searchInput.value = searchTerm;
-                searchSuggestions.classList.add('hidden');
-                realizarBusqueda();
-            });
-        });
-
-        // Función para realizar búsqueda
-        function realizarBusqueda() {
-            const searchTerm = searchInput.value.trim();
-            if (searchTerm) {
-                // Aquí puedes implementar la lógica de búsqueda
-                // Por ahora, mostraremos un mensaje
-                alert(`Buscando: ${searchTerm}\n\nEsta funcionalidad se puede conectar con el backend para mostrar resultados específicos.`);
-                
-                // Ejemplo de navegación basada en el término de búsqueda
-                const searchTermLower = searchTerm.toLowerCase();
-                
-                if (['chiapas', 'oaxaca', 'jalisco'].includes(searchTermLower)) {
-                    // Navegar a la sección de estados
-                    const estadosSection = document.getElementById('estados');
-                    if (estadosSection) {
-                        estadosSection.scrollIntoView({ behavior: 'smooth' });
-                    }
-                } else if (['mole', 'tacos', 'tamales', 'pozole', 'enchiladas', 'chiles'].includes(searchTermLower)) {
-                    // Aquí podrías navegar a una sección de gastronomía
-                    alert(`Mostrando recetas y comidas relacionadas con: ${searchTerm}`);
-                } else if (['guelaguetza', 'día de muertos', 'feria'].includes(searchTermLower)) {
-                    // Aquí podrías navegar a una sección de eventos
-                    alert(`Mostrando eventos y festivales relacionados con: ${searchTerm}`);
+        // Cargar recetas de todos los estados al inicio (puedes optimizar esto si hay muchos estados)
+        async function cargarTodasLasRecetas() {
+            for (const key in estadosData) {
+                try {
+                    const res = await fetch(`/api/recetas/${key}`);
+                    const data = await res.json();
+                    recetasData[key] = data.recetas || [];
+                } catch (e) {
+                    recetasData[key] = [];
                 }
             }
         }
+        cargarTodasLasRecetas();
+
+        const searchInput = document.getElementById('searchInput');
+        const suggestionsBox = document.getElementById('searchSuggestions');
+
+        searchInput.addEventListener('input', function() {
+            const query = this.value.trim().toLowerCase();
+            if (!query) {
+                suggestionsBox.classList.add('hidden');
+                return;
+            }
+            // Buscar estados
+            const estadosCoinciden = Object.entries(estadosData)
+                .filter(([key, estado]) => estado.nombre.toLowerCase().includes(query))
+                .map(([key, estado]) => ({
+                    nombre: estado.nombre,
+                    key,
+                    imagen: estado.imagen
+                }));
+            // Buscar recetas
+            let recetasCoinciden = [];
+            for (const [key, recetas] of Object.entries(recetasData)) {
+                recetas.forEach(receta => {
+                    if (receta.nombre.toLowerCase().includes(query)) {
+                        recetasCoinciden.push({
+                            nombre: receta.nombre,
+                            estado: estadosData[key].nombre,
+                            key
+                        });
+                    }
+                });
+            }
+            // Renderizar sugerencias
+            let html = '<div class="grid grid-cols-1 md:grid-cols-2 gap-4">';
+            if (estadosCoinciden.length) {
+                html += '<div><h3 class="text-[#d4af37] font-semibold mb-2 flex items-center gap-2"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm4 0h-2v-6h2v6zm.5-9.5c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5.67-1.5 1.5-1.5 1.5.67 1.5 1.5zm-5 0c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5.67-1.5 1.5-1.5 1.5.67 1.5 1.5z"></path></svg>Estados</h3>';
+                estadosCoinciden.forEach(e => {
+                    html += `<div class="suggestion-item text-gray-700 hover:text-[#d4af37] cursor-pointer py-1 px-2 rounded hover:bg-gray-100 transition-colors flex items-center gap-2" data-url="/estado/${e.key}">
+                        <img src="${e.imagen}" alt="${e.nombre}" class="w-8 h-8 rounded-full object-cover border border-gray-300 mr-2">
+                        <span>${e.nombre}</span>
+                    </div>`;
+                });
+                html += '</div>';
+            }
+            if (recetasCoinciden.length) {
+                html += '<div><h3 class="text-[#d4af37] font-semibold mb-2 flex items-center gap-2"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8.1 13.34l2.83-2.83L3.91 3.5c-1.56 1.56-1.56 4.09 0 5.66l4.19 4.18zm6.78-1.81c1.53.71 3.68.21 5.27-1.38 1.91-1.91 2.28-4.65.81-6.12-1.46-1.46-4.2-1.1-6.12.81-1.59 1.59-2.09 3.74-1.38 5.27L3.7 19.87l1.41 1.41L12 14.41l6.88 6.88 1.41-1.41L13.41 13l1.47-1.47z"></path></svg>Recetas</h3>';
+                recetasCoinciden.forEach(r => {
+                    html += `<div class="suggestion-item text-gray-700 hover:text-[#d4af37] cursor-pointer py-1 px-2 rounded hover:bg-gray-100 transition-colors" data-url="/estado/${r.key}">
+                        <span>${r.nombre} <span class='text-xs text-gray-500'>(en ${r.estado})</span></span>
+                    </div>`;
+                });
+                html += '</div>';
+            }
+            if (!estadosCoinciden.length && !recetasCoinciden.length) {
+                html += '<div class="col-span-full text-center text-gray-400">Sin coincidencias.</div>';
+            }
+            html += '</div>';
+            suggestionsBox.innerHTML = html;
+            suggestionsBox.classList.remove('hidden');
+            // Click en sugerencia
+            suggestionsBox.querySelectorAll('.suggestion-item').forEach(item => {
+                item.onclick = function() {
+                    const url = this.getAttribute('data-url');
+                    if (url) window.location.href = url;
+                };
+            });
+        });
+        // Ocultar sugerencias al perder foco
+        searchInput.addEventListener('blur', function() {
+            setTimeout(() => suggestionsBox.classList.add('hidden'), 200);
+        });
 
         // Permitir búsqueda con Enter
         searchInput.addEventListener('keypress', function(e) {
