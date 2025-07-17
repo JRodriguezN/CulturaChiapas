@@ -234,7 +234,11 @@
                     <h2 class="text-4xl font-bold title-font text-white mb-4">Platos Típicos de {{ estado.nombre }}</h2>
                     <p class="text-lg text-gray-400 max-w-2xl mx-auto">Los sabores que definen la gastronomía de {{ estado.nombre }}</p>
                 </div>
-                
+                <!-- Mapa de Google Maps -->
+                <div class="mb-12">
+                    <div id="map-comidas" style="width: 100%; height: 400px; border-radius: 1rem; overflow: hidden;"></div>
+                </div>
+                <div id="places-list" class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8"></div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {% if estado.gastronomia %}
                         {% for comida in estado.gastronomia %}
@@ -464,6 +468,109 @@
             mostrarSeccion('recetas');
             cargarRecetas();
         });
+        // Google Maps y Places API para comidas locales
+        let mapComidas;
+        let placesService;
+        let markers = [];
+        function initMapComidas() {
+            // Centrar el mapa en la capital del estado
+            const capital = "{{ estado.capital }}";
+            const estadoNombre = "{{ estado.nombre }}";
+            // Usar Geocoding para obtener lat/lng de la capital
+            const geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ address: capital + ', ' + estadoNombre + ', México' }, function(results, status) {
+                if (status === 'OK' && results[0]) {
+                    const center = results[0].geometry.location;
+                    mapComidas = new google.maps.Map(document.getElementById('map-comidas'), {
+                        center: center,
+                        zoom: 12,
+                        mapId: 'cultura_chiapas_comidas',
+                        styles: [
+                            { elementType: 'geometry', stylers: [{ color: '#1a1a1a' }] },
+                            { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },
+                            { elementType: 'labels.text.fill', stylers: [{ color: '#746855' }] },
+                            { featureType: 'poi', stylers: [{ visibility: 'off' }] },
+                        ]
+                    });
+                    buscarComidasLocales(center, estadoNombre);
+                } else {
+                    document.getElementById('map-comidas').innerHTML = '<div class="text-center text-gray-400 py-10">No se pudo cargar el mapa.</div>';
+                }
+            });
+        }
+        function buscarComidasLocales(center, estadoNombre) {
+            // Buscar lugares de comida típica usando Places API
+            placesService = new google.maps.places.PlacesService(mapComidas);
+            // Ejemplo de búsqueda: comida chiapaneca, oaxaqueña, etc.
+            const query = 'comida típica ' + estadoNombre;
+            const request = {
+                location: center,
+                radius: 15000, // 15km
+                query: query
+            };
+            placesService.textSearch(request, function(results, status) {
+                limpiarMarcadores();
+                const placesList = document.getElementById('places-list');
+                placesList.innerHTML = '';
+                if (status === google.maps.places.PlacesServiceStatus.OK && results.length) {
+                    results.forEach(place => {
+                        // Crear marcador
+                        const marker = new google.maps.Marker({
+                            map: mapComidas,
+                            position: place.geometry.location,
+                            title: place.name
+                        });
+                        markers.push(marker);
+                        // InfoWindow
+                        const infowindow = new google.maps.InfoWindow({
+                            content: `<div><strong>${place.name}</strong><br>${place.formatted_address || ''}</div>`
+                        });
+                        marker.addListener('click', function() {
+                            infowindow.open(mapComidas, marker);
+                        });
+                        // Mostrar en lista
+                        placesList.innerHTML += `
+                            <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700 mb-4">
+                                <h4 class="text-lg font-bold text-white mb-2">${place.name}</h4>
+                                <p class="text-gray-300 mb-1">${place.formatted_address || ''}</p>
+                                <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.name + ' ' + (place.formatted_address || ''))}" target="_blank" class="text-blue-400 hover:underline text-sm">Ver en Google Maps</a>
+                            </div>
+                        `;
+                    });
+                } else {
+                    placesList.innerHTML = '<div class="col-span-full text-center text-gray-400">No se encontraron lugares de comida típica en Google Maps para este estado.</div>';
+                }
+            });
+        }
+        function limpiarMarcadores() {
+            markers.forEach(m => m.setMap(null));
+            markers = [];
+        }
+        // Inicializar mapa cuando se muestra la sección de comidas
+        function mostrarSeccion(seccion) {
+            document.querySelectorAll('.seccion-contenido').forEach(s => s.classList.add('hidden'));
+            document.querySelectorAll('button').forEach(btn => {
+                btn.classList.remove('bg-gradient-to-r');
+                btn.classList.add('bg-gray-700');
+                btn.style.background = '';
+                btn.style.backgroundImage = '';
+            });
+            document.getElementById(seccion).classList.remove('hidden');
+            const botonActivo = document.getElementById('btn-' + seccion);
+            botonActivo.classList.remove('bg-gray-700');
+            botonActivo.classList.add('bg-gradient-to-r');
+            botonActivo.style.background = `linear-gradient(to right, {{ estado.color }}, {{ estado.color_light }})`;
+            if (seccion === 'comidas') {
+                setTimeout(() => {
+                    if (!window._mapComidasIniciado) {
+                        initMapComidas();
+                        window._mapComidasIniciado = true;
+                    }
+                }, 300);
+            }
+        }
     </script>
+    <!-- Google Maps JS API (reemplaza TU_API_KEY_AQUI por tu clave real) -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFoROwGyHZimdxEXyU3jiM1eUJVp9DVtc&libraries=places"></script>
 </body>
 </html> 
