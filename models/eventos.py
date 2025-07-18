@@ -1,10 +1,26 @@
-class Eventos:
-    def __init__(self,id_evento,nombreEvento,fecha_inicio,hora_inicio,fecha_publicacion):
-        self.id_evento = id_evento
-        self.nombreEvento = nombreEvento
-        self.fecha_inicio = fecha_inicio
-        self.hora_inicio = hora_inicio
-        self.fecha_publicacion = fecha_publicacion
+# models/eventos.py
 
-    def __str__(self):
-        pass
+def obtener_eventos():
+    return [
+        {
+            "nombre": "Guelaguetza",
+            "ubicacion": "Oaxaca",
+            "fecha": "Julio",
+            "descripcion": "Fiesta tradicional con bailes regionales y cultura zapoteca.",
+            "imagen": "static/img/festival_cafe.jpg"
+        },
+        {
+            "nombre": "Feria de San Marcos",
+            "ubicacion": "Aguascalientes",
+            "fecha": "Abril - Mayo",
+            "descripcion": "Una de las ferias más grandes de México con música, comida y toros.",
+            "imagen": "static/img/feria_san_marcos.jpg"
+        },
+        {
+            "nombre": "Festival Cervantino",
+            "ubicacion": "Guanajuato",
+            "fecha": "Octubre",
+            "descripcion": "Festival cultural con teatro, danza, cine y música internacional.",
+            "imagen": "static/img/festival_cafe.jpg"
+        }
+    ]

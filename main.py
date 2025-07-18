@@ -1,10 +1,12 @@
-from flask import Flask
-from flask import render_template
+# main.py
+from flask import Flask, render_template
 import requests
+from controller.eventosController import eventos_bp
 from controller.recetasController import recetas_api
 
 
 app = Flask(__name__)
+app.register_blueprint(eventos_bp)
 app.register_blueprint(recetas_api)
 
 # Diccionario global de estados
@@ -123,6 +125,7 @@ estados_info = {
     }
 }
 
+# Ruta principal "/"
 @app.route('/')
 def index():
     return render_template('index.html', estados=estados_info)
@@ -136,7 +139,10 @@ def estado_detalle(nombre_estado):
         return "Estado no encontrado", 404
     return render_template('estado_info.html', estado=estado)
 
+# Ruta individual de Chiapas
 @app.route('/chiapas')
 def chiapas():
     return render_template('chiapas.html')
 
+if __name__ == "__main__":
+    app.run(debug=True)

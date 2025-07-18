@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Eventos y Festivales</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0; 
+            padding: 0;
+        }
+        header {
+            position: relative;
+            padding: 20px 20px 40px 20px;
+        }
+        h1 {
+            text-align: center;
+            margin: 0; padding: 0;
+        }
+        form {
+            text-align: center;
+            margin: 20px 0 0 0;
+        }
+        input[type="text"] {
+            padding: 14px 16px;
+            width: 400px;
+            border-radius: 8px;
+            border: none;
+            background-color: #1f1f1f;
+            color: white;
+            font-size: 18px;
+        }
+        select {
+            padding: 12px;
+            font-size: 18px;
+            border-radius: 8px;
+            margin-left: 10px;
+        }
+        button {
+            padding: 12px 24px;
+            border-radius: 8px;
+            background-color: gold;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 15px;
+        }
+        .btn-inicio {
+            position: absolute;
+            top: 20px; right: 20px;
+            background-color: #444;
+            color: white;
+            padding: 14px 28px;
+            font-size: 18px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+            transition: background-color 0.3s ease;
+        }
+        .btn-inicio:hover {
+            background-color: #666;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            width: 300px;
+            background: linear-gradient(145deg, #5a3e2b, #36241a);
+            border-radius: 16px;
+            padding: 10px 15px;
+            border: 2px solid gold;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+            transition: transform 0.2s ease, background 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: scale(1.03);
+            background: linear-gradient(145deg, #6e4a35, #3c2a1e);
+        }
+        .card img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 8px;
+        }
+        .card h2 {
+            margin-top: 8px;
+            margin-bottom: 6px;
+            color: gold;
+            font-size: 1.3rem;
+        }
+        .card p {
+            margin: 4px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000000;
+            color: #ccc;
+            padding: 40px 20px;
+            font-size: 14px;
+            margin-top: 300px; /* espacio extra arriba para separar del contenido */
+        }
+        footer h4 {
+            color: gold;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+        footer p {
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        footer ul li {
+            margin-bottom: 8px;
+        }
+        footer a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: white;
+        }
+        footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        footer .grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 30px;
+        }
+        @media(min-width: 768px) {
+            footer .grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        footer .flex {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            border-top: 1px solid #222;
+            padding-top: 20px;
+        }
+        footer .flex p {
+            color: #666;
+            font-size: 12px;
+        }
+        footer .flex div a {
+            margin-left: 15px;
+            font-size: 12px;
+            color: #666;
+        }
+        footer .flex div a:hover {
+            color: white;
+        }
+        footer input[type="email"] {
+            background-color: #1f1f1f;
+            border: 1px solid #444;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px 0 0 4px;
+            width: 70%;
+            outline: none;
+        }
+        footer button {
+            background-color: #d62828;
+            border: none;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        footer button:hover {
+            background-color: #c51f1f;
+        }
+        footer svg {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Eventos y Festivales de México</h1>
+
+    <form method="GET" action="{{ url_for('eventos.mostrar_eventos') }}">
+        <input type="text" name="q" list="sugerencias" placeholder="Buscar evento, ubicación, etc..."
+               value="{{ request.args.get('q', '') }}">
+        <datalist id="sugerencias">
+            {% for nombre in nombres %}
+            <option value="{{ nombre }}">
+            {% endfor %}
+            {% for ubicacion in ubicaciones %}
+            <option value="{{ ubicacion }}">
+            {% endfor %}
+            {% for categoria in categorias %}
+            <option value="{{ categoria }}">
+            {% endfor %}
+        </datalist>
+
+        <select name="categoria">
+            <option value="">-- Categoría --</option>
+            {% for cat in categorias %}
+            <option value="{{ cat }}" {% if request.args.get('categoria') == cat %}selected{% endif %}>{{ cat.capitalize() }}</option>
+            {% endfor %}
+        </select>
+
+        <select name="ubicacion">
+            <option value="">-- Ubicación --</option>
+            {% for ubi in ubicaciones %}
+            <option value="{{ ubi }}" {% if request.args.get('ubicacion') == ubi %}selected{% endif %}>{{ ubi.capitalize() }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Buscar</button>
+    </form>
+
+    <form action="{{ url_for('inicio') }}" method="GET">
+        <button type="submit" class="btn-inicio">Inicio</button>
+    </form>
+</header>
+
+{% if eventos %}
+<div class="card-container">
+    {% for evento in eventos %}
+    <div class="card">
+        <img src="{{ evento.imagen }}" alt="{{ evento.nombre }}">
+        <h2>{{ evento.nombre }}</h2>
+        <p><strong>Ubicación:</strong> {{ evento.ubicacion.capitalize() }}</p>
+        <p><strong>Fecha:</strong> {{ evento.fecha }}</p>
+        <p>{{ evento.descripcion }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<p style="text-align: center; font-size: 18px; margin-top: 40px;">No se encontraron eventos con esa búsqueda.</p>
+{% endif %}
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="grid">
+            <div>
+                <h4>México Tradicional</h4>
+                <p>Celebrando la riqueza cultural y las tradiciones de nuestro hermoso país.</p>
+            </div>
+            
+            <div>
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#estados">Estados</a></li>
+                    <li><a href="#tradiciones">Tradiciones</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4>Recursos</h4>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Eventos</a></li>
+                    <li><a href="#">Artesanos</a></li>
+                    <li><a href="#">Turismo Cultural</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4>Boletín</h4>
+                <p>Suscríbete para recibir noticias sobre eventos culturales y tradiciones.</p>
+                <div style="display:flex;">
+                    <input type="email" placeholder="Tu correo" aria-label="Correo electrónico">
+                    <button>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="flex">
+            <p>© 2023 México Tradicional. Todos los derechos reservados.</p>
+            <div>
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos de Uso</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
